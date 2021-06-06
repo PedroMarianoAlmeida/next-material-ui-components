@@ -1,15 +1,16 @@
-import Link from 'next/link';
+import NextLink from 'next/link';
 
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import MaterialLink from '@material-ui/core/Link';
 
 const drawerWidth = 240;
 
@@ -62,13 +63,16 @@ export default function PermanentDrawerLeft({ children }) {
       >
         <div className={classes.toolbar} />
         <Divider />
-        <List>
-          <ListItem button>
-            <Link href="/SEO">
-              <ListItemText primary="SEO" />
-            </Link>
-          </ListItem>
-        </List>
+        <Accordion>
+          <AccordionSummary>SEO</AccordionSummary>
+
+          <NextLink href="TitleAndDescriptionSEO">
+            <AccordionDetails>
+              <MaterialLink>TitleAndDescriptionSEO</MaterialLink>
+            </AccordionDetails>
+          </NextLink>
+        </Accordion>
+
         <Divider />
       </Drawer>
       <main className={classes.content}>
