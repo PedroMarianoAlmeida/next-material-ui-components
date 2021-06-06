@@ -22,9 +22,10 @@ export default function Home() {
         Go to{' '}
         <ExternalLink
           href="https://github.com/PedroMarianoAlmeida/next-material-ui-template"
-          text="template"
           tooltip="template repo"
-        />
+        >
+          template
+        </ExternalLink>
       </Typography>
     </>
   );

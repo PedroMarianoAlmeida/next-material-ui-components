@@ -7,10 +7,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import MaterialLink from '@material-ui/core/Link';
 
 import ComponentItem from './ComponentItem';
 
@@ -67,9 +63,15 @@ export default function PermanentDrawerLeft({ children }) {
       >
         <div className={classes.toolbar} />
         <Divider />
-        <ComponentItem title="SEO" component="TitleAndDescriptionSEO" />
-        <ComponentItem title="Material UI" component="ExternalLink" />
-        <ComponentItem title="Third Party Components" component="ShowCode" />
+        <ComponentItem title="SEO" components={['TitleAndDescriptionSEO']} />
+        <ComponentItem
+          title="Material UI"
+          components={['ExternalLink', 'AvatarResizable']}
+        />
+        <ComponentItem
+          title="Third Party Components"
+          components={['ShowCode']}
+        />
 
         <Divider />
       </Drawer>
