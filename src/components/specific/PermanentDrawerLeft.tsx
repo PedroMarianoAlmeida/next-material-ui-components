@@ -12,6 +12,8 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import MaterialLink from '@material-ui/core/Link';
 
+import ComponentItem from './ComponentItem';
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -65,22 +67,9 @@ export default function PermanentDrawerLeft({ children }) {
       >
         <div className={classes.toolbar} />
         <Divider />
-        <Accordion>
-          <AccordionSummary>SEO</AccordionSummary>
-          <AccordionDetails>
-            <NextLink href="TitleAndDescriptionSEO">
-              <MaterialLink>TitleAndDescriptionSEO</MaterialLink>
-            </NextLink>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion>
-          <AccordionSummary>Third Party Components</AccordionSummary>
-          <AccordionDetails>
-            <NextLink href="ShowCode">
-              <MaterialLink>ShowCode</MaterialLink>
-            </NextLink>
-          </AccordionDetails>
-        </Accordion>
+        <ComponentItem title="SEO" component="TitleAndDescriptionSEO" />
+        <ComponentItem title="Material UI" component="ExternalLink" />
+        <ComponentItem title="Third Party Components" component="ShowCode" />
 
         <Divider />
       </Drawer>
