@@ -48,9 +48,11 @@ export default function PermanentDrawerLeft({ children }) {
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <Typography variant="h6" noWrap>
-            Next Material React Components
-          </Typography>
+          <NextLink href="/">
+            <Typography variant="h6" noWrap>
+              Next Material React Components
+            </Typography>
+          </NextLink>
         </Toolbar>
       </AppBar>
       <Drawer
