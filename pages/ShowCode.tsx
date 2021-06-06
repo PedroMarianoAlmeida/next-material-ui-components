@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
 
@@ -31,7 +29,7 @@ export default ShowCode;
 `;
 
 const example = `
-<ShowCode code={} language={} />
+<ShowCode code="console.log('Hello World')" language="js" />
 `;
 
 const ShowCodePage = () => {
@@ -47,7 +45,7 @@ const ShowCodePage = () => {
       <Typography variant="h2">Usage</Typography>
       <ShowCode code={example} language="jsx" />
       <Typography variant="h2">Result</Typography>
-      <Typography>All codes on the screen</Typography>
+      <ShowCode code="console.log('Hello World')" language="js" />
       <Typography variant="h2">Component</Typography>
       <ShowCode code={ShowCodeText} language="jsx" />
       <Typography variant="h2">Dependencies</Typography>
