@@ -1,5 +1,6 @@
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
+import FacebookIcon from '@material-ui/icons/Facebook';
 
 import ShowCode from '../src/components/reusable/ThirdPartyComponents/ShowCode';
 import TitleAndDescriptionSEO from '../src/components/reusable/SEO/TitleAndDescriptionSEO';
@@ -9,11 +10,11 @@ const ExternalLinkText = `
 import Link from '@material-ui/core/Link';
 import Tooltip from '@material-ui/core/Tooltip';
 
-const ExternalLink = ({ href, text, tooltip }) => {
+const ExternalLink = ({ href, linkComponent, tooltip }) => {
   return (
     <Tooltip title={tooltip}>
       <Link href={href} target="_blank" rel="noopener noreferrer">
-        {text}
+        {linkComponent}
       </Link>
     </Tooltip>
   );
@@ -22,11 +23,25 @@ const ExternalLink = ({ href, text, tooltip }) => {
 export default ExternalLink;
 `;
 
-const example = `
+const example1 = `
+import Typography from '@material-ui/core/Typography';
+
 <ExternalLink
   href="https://www.pedroprogrammer.com/"
-  text="visit my website"
+  linkComponent={
+    <Typography display="inline">visit my website</Typography>
+  }
   tooltip="Pedro Programmer Official Website"
+/>
+`;
+
+const example2 = `
+import FacebookIcon from '@material-ui/icons/Facebook';
+
+<ExternalLink
+  href="https://www.facebook.com/"
+  linkComponent={ <FacebookIcon /> }
+  tooltip="Facebook"
 />
 `;
 
@@ -41,12 +56,25 @@ const ExternalLinkPage = () => {
         ExternalLink
       </Typography>
       <Typography variant="h2">Usage</Typography>
-      <ShowCode code={example} language="jsx" />
-      <Typography variant="h2">Result</Typography>
+      <Typography variant="h3">Example 1: With Text</Typography>
+      <Typography variant="h4">Code</Typography>
+      <ShowCode code={example1} language="jsx" />
+      <Typography variant="h4">Result</Typography>
       <ExternalLink
         href="https://www.pedroprogrammer.com/"
-        text="visit my website"
+        linkComponent={
+          <Typography display="inline">visit my website</Typography>
+        }
         tooltip="Pedro Programmer Official Website"
+      />
+      <Typography variant="h3">Example 2: With Icon</Typography>
+      <Typography variant="h4">Code</Typography>
+      <ShowCode code={example2} language="jsx" />
+      <Typography variant="h4">Result</Typography>
+      <ExternalLink
+        href="https://www.facebook.com/"
+        linkComponent={<FacebookIcon />}
+        tooltip="Facebook"
       />
       <Typography variant="h2">Component</Typography>
       <ShowCode code={ExternalLinkText} language="jsx" />
