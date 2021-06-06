@@ -23,10 +23,13 @@ export default TitleAndDescriptionSEO
 `;
 
 const example = `
-<TitleAndDescriptionSEO title='Pedro Programmer | Home Page' description='Pedro Programmer Official Webpage' >
+<TitleAndDescriptionSEO 
+  title='Pedro Programmer | Home Page' 
+  description='Pedro Programmer Official Webpage' 
+/>
 `;
 
-const SEO = () => {
+const TitleAndDescriptionSEOPage = () => {
   return (
     <>
       <TitleAndDescriptionSEO
@@ -58,4 +61,4 @@ const SEO = () => {
   );
 };
 
-export default SEO;
+export default TitleAndDescriptionSEOPage;

@@ -49,7 +49,7 @@ export default function PermanentDrawerLeft({ children }) {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" noWrap>
-            Permanent drawer
+            Next Material React Components
           </Typography>
         </Toolbar>
       </AppBar>
@@ -65,12 +65,19 @@ export default function PermanentDrawerLeft({ children }) {
         <Divider />
         <Accordion>
           <AccordionSummary>SEO</AccordionSummary>
-
-          <NextLink href="TitleAndDescriptionSEO">
-            <AccordionDetails>
+          <AccordionDetails>
+            <NextLink href="TitleAndDescriptionSEO">
               <MaterialLink>TitleAndDescriptionSEO</MaterialLink>
-            </AccordionDetails>
-          </NextLink>
+            </NextLink>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary>Third Party Components</AccordionSummary>
+          <AccordionDetails>
+            <NextLink href="ShowCode">
+              <MaterialLink>ShowCode</MaterialLink>
+            </NextLink>
+          </AccordionDetails>
         </Accordion>
 
         <Divider />
